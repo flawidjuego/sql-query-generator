@@ -1,0 +1,23 @@
+{
+    "name": "sql-query-generator",
+    "version": "1.0.0",
+    "description": "A SQL Query Generator",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "uvu tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/flawidjuego/sql-query-generator.git"
+    },
+    "author": "Flawid DSouza",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/flawidjuego/sql-query-generator/issues"
+    },
+    "homepage": "https://github.com/flawidjuego/sql-query-generator#readme",
+    "devDependencies": {
+        "uvu": "^0.5.2"
+    }
+}
