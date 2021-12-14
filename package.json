@@ -2,10 +2,13 @@
     "name": "sql-query-generator",
     "version": "1.0.0",
     "description": "A SQL Query Generator",
-    "main": "index.js",
+    "main": "dist/index.cjs",
+    "module": "index.js",
     "type": "module",
     "scripts": {
-        "test": "uvu tests"
+        "test": "uvu tests",
+        "build": "rollup -c",
+        "prepublish": "npm run build"
     },
     "repository": {
         "type": "git",
@@ -18,6 +21,7 @@
     },
     "homepage": "https://github.com/flawidjuego/sql-query-generator#readme",
     "devDependencies": {
+        "rollup": "^2.61.1",
         "uvu": "^0.5.2"
     }
 }
