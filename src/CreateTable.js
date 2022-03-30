@@ -92,4 +92,21 @@ export default class CreateTable {
 
         return sql
     }
+
+    generateAlter() {
+        let sql = `ALTER TABLE ${this.tableName}\n`;
+
+        this.columns.forEach((column, index) => {
+            const defaultSQLString = column.defaultValue !== undefined && column.defaultValue !== null ? ` DEFAULT ${this.handleDefaultValue(column.defaultValue)}` : '';
+            const notNullSQLString = !column.nullable ? ' NOT NULL' : '';
+            const autoIncrement = column.name === this.primaryKey ? ' AUTO_INCREMENT' : '';
+            const afterColumn = 'after' in column && column.after ? ` AFTER ${column.after}` : ''
+            sql += `ADD COLUMN ${column.name} ${column.type}${notNullSQLString}${defaultSQLString}${autoIncrement}${afterColumn}`;
+            if(this.columns.length - 1 !== index) {
+                sql += ',\n'
+            }
+        });
+
+        return sql
+    }
 }
