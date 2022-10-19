@@ -75,7 +75,7 @@ export default class CreateTable {
     }
 
     generate() {
-        let sql = `CREATE TABLE ${this.tableName} (\n`
+        let sql = `CREATE TABLE \`${this.tableName}\` (\n`
 
         this.columns.forEach(column => {
             const defaultSQLString = column.defaultValue !== undefined && column.defaultValue !== null ? ` DEFAULT ${this.handleDefaultValue(column.defaultValue)}` : ''
